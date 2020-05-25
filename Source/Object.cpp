@@ -62,7 +62,7 @@ void Object::resizeSprite(sf::Vector2f size) {
 }
 
 void Object::drawObject(sf::RenderWindow *m_window){
-    sprite.setPosition(coordinate.x, coordinate.y);
+    sprite.setPosition(getX(), getY());
     m_window->draw(sprite);
 }
 

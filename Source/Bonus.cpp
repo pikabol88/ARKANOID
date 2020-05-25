@@ -1,10 +1,10 @@
 #include "Bonus.h"
 
 Bonus::Bonus(int width, int height) {
-    coordinate.x = 0;
-    coordinate.y = 0;
-    size.x = width;
-    size.y = height;
+    setX(0);
+    setY(0);
+    setWidth(width);
+    setHeight(height);
     setSpeed(Parameters::BONUS_SPEED);
     type = NONE;
     loadSprites();

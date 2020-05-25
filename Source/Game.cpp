@@ -17,7 +17,6 @@ void Game::initGame() {
     createScore();
     createLives();
 }
-
 void Game::createScore() {
     score = new Score(*font, Parameters::SCORE_FONT);
     score->setPosition(WINDOW_WIDTH - WINDOW_WIDTH * 0.3, PADDING_TOP / 4);
