@@ -2,6 +2,8 @@
 #define PARAMETERS_H
 #pragma once
 
+#include "TextureSettings.h"
+
 class Parameters {
 
 public:
@@ -60,8 +62,6 @@ public:
        
     //Block settings    
     static const float MOVING_BLOCK_SPEED;
-    static const int BLOCK_IMG_WIDTH = 385;
-    static const int BLOCK_IMG_HEIGHT = 130;
     static const int USUAL_BLOCK_NUM = 10;
     static const int UNKILLED_BLOCK_NUM = 20;
     static const int STONE_BLOCK_NUM = 30;

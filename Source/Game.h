@@ -18,8 +18,10 @@ class Game {
 public:
     void initGame();   
     void runGame();
+    ~Game();
         
-private:
+private:   
+
     typedef enum game_status {
         START,
         RUN,

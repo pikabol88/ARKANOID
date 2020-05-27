@@ -6,7 +6,7 @@ void Paddle::loadSprites() {
     texture.loadFromFile("images\\paddles.png");
     texture.setSmooth(true);
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(1055, 240, 83, 16));
+    sprite.setTextureRect(sf::IntRect(TexSet::PADDLE_X, TexSet::PADDLE_Y, TexSet::PADDLE_WIDTH, TexSet::PADDLE_HEIGHT));
     sprite.setScale(getWidth() / sprite.getLocalBounds().width, getHeight() / sprite.getLocalBounds().height);
 }
 

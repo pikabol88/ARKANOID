@@ -14,6 +14,6 @@ void Bottom::loadSprites() {
     texture.loadFromFile("images\\bottom.png");
     texture.setSmooth(true);
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(0, 900, 1330, 80));
+    sprite.setTextureRect(sf::IntRect(TexSet::BOTTOM_X, TexSet::BOTTOM_Y, TexSet::BOTTOM_WIDTH, TexSet::BALL_HEIGHT));
     sprite.setScale(getWidth() / sprite.getLocalBounds().width, getHeight() / sprite.getLocalBounds().height);
 }

@@ -280,3 +280,23 @@ void Game::fail() {
         status = GAME_OVER;
     }
 }
+
+Game::~Game() {
+    delete map;
+    delete paddle;
+    delete ball;
+    delete font;
+    delete score;
+    delete m_clock;
+    if (secondBall) delete secondBall;
+    if (bonus) delete bonus;
+    if (bottom) delete bottom;
+    if(gameOverText) delete gameOverText;
+    if(winText) delete winText;
+
+    for (int i = 0;i < Parameters::LIVES_COUNT;i++) {
+        delete lives[i];
+    }
+
+    delete m_window;
+}

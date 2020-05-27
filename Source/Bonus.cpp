@@ -15,9 +15,8 @@ Bonus::~Bonus() {}
 void Bonus::loadSprites() {
     texture.loadFromFile("images\\arkanoid.png");
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(772, 848, 62, 60));
+    sprite.setTextureRect(sf::IntRect(TexSet::BONUS_X, TexSet::BONUS_Y, TexSet::BONUS_WIDTH, TexSet::BONUS_HEIGHT));
     sprite.setScale(getWidth() / sprite.getLocalBounds().width, getHeight() / sprite.getLocalBounds().height);
-
 }
 
 void Bonus::createBonus(Block *block) {

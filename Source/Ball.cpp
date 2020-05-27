@@ -13,7 +13,7 @@ Ball::Ball(int winW, int winH, int ballW, int ballH) {
     this->displacement.y = getSpeed() / 2;
     this->loadSprites();
 }
-
+Ball::~Ball(){}
 void Ball::changeSpeed(int moode) {
     sf::Vector2i sign;
     (displacement.x > 0) ? (sign.x = 1):(sign.x = -1);
@@ -38,7 +38,7 @@ void Ball::loadSprites() {
     texture.setSmooth(true);
     sprite.setTexture(texture);
     sprite.setColor(sf::Color::Cyan);
-    sprite.setTextureRect(sf::IntRect(1403, 653, 68, 68));
+    sprite.setTextureRect(sf::IntRect(TexSet::BALL_X, TexSet::BALL_Y, TexSet::BALL_WIDTH, TexSet::BALL_HEIGHT));
     sprite.setScale(getWidth() / sprite.getLocalBounds().width, getHeight()/ sprite.getLocalBounds().height);
 }
 
@@ -80,7 +80,7 @@ bool Ball::checkFail(int winW) {
     return 0;
 }
 
-void Ball::ballBonusManager(Bonus &bonus) {
+void Ball::stopBallBonus(Bonus &bonus) {
     if (bonuseIsActivated && bonusActiveTime == 0) {
         changeSpeed(0);
         bonusInactive();
@@ -89,7 +89,7 @@ void Ball::ballBonusManager(Bonus &bonus) {
 }
 
 bool Ball::moveBall(Paddle &paddle, Map &map, Bonus &bonus,Score &score, int winW, int winH) {
-    ballBonusManager(bonus);
+    stopBallBonus(bonus);
     if (state != FAIL && state != STEAK) {
         setX(getX() + displacement.x);
         checkMapCollision(map, &bonus,&score, 0);

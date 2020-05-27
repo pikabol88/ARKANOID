@@ -20,16 +20,15 @@ public:
 protected:
 
     typedef enum blockcolor {
-        blue = 0,
-        lblue = 1,
-        green = 2,
-        lgreen = 3,
+        lgreen = 0,
+        violet = 1,
+        gray = 2,
+        green = 3,
         yellow = 4,
-        red = 5,
-        voilet = 6,
-        brown = 7,
-        orange = 8,
-        gray = 9
+        lblue = 5,
+        orange = 6,
+        blue = 7,
+        red = 8
     } blockcolor_t;
 
     int type;
@@ -37,6 +36,8 @@ protected:
     bool bonus = 1;
 
     virtual void loadSprites() override;
+
+    void setSprites();
 
 };
 

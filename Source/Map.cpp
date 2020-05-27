@@ -51,7 +51,7 @@ void Map::addStoneBlock(int i, int j, sf::Vector2f size, int pattern) {
 
 void Map::addMoveBlock() {
    sf::Vector2f size = setBlockSize();
-   int pattern = getRandomNumber(1, 9);
+   int pattern = getRandomNumber(1, 8);
    sf::Vector2f max = maxCoordinates();
    sf::Vector2f finish;
    moveBlock = new MoveBlock(PADDING_LR, max.y + size.y, size.x, size.y,BLOCKS_COL *size.x+PADDING_LR,PADDING_LR, pattern, BLOCK_LIVES);
@@ -136,4 +136,13 @@ void Map::drawingMap(sf::RenderWindow *m_window, float time) {
 
 int Map::getCurrentBlockCount() {
     return blockCount;
+}
+
+Map::~Map() {
+    for (int i = 0; i < BLOCKS_ROW; i++) {
+        for (int j = 0; j < BLOCKS_COL; j++) {
+            delete blocks[i][j];
+        }
+    }
+    if (moveBlock) delete moveBlock;
 }

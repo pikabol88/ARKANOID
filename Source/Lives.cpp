@@ -21,6 +21,6 @@ void Live::loadSprites() {
     texture.loadFromFile("images\\arkanoid.png");
     texture.setSmooth(true);
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(1637, 650, 65, 65));
+    sprite.setTextureRect(sf::IntRect(TexSet::LIFE_X, TexSet::LIFE_Y, TexSet::LIFE_WIDTH, TexSet::LIFE_HEIGHT));
     sprite.setScale(getWidth() / sprite.getLocalBounds().width, getHeight() / sprite.getLocalBounds().height);
 }

@@ -23,6 +23,7 @@ public:
     } state_t;
 
     Ball(int winW, int winH, int ballW, int ballH);
+    ~Ball();
 
     //!Main ball method - ball movement in the game
     bool moveBall(Paddle & paddle, Map &map, Bonus & bonus, Score & score, int winW, int winH);
@@ -51,16 +52,21 @@ private:
     
     /*!The main blocks and ball collision handling*/
     void checkMapCollision(Map & map, Bonus * bonus, Score * score, int type);
-    /*!Vert collision handling*/
+    /*!Vertecal collision handling*/
     bool checkBlockVerticalCollision(Map & map, Bonus * bonus, Block * block, Score * score);
+    /*!Horizontal collision handling*/
     bool checkBlockHorizontalCollision(Map & map, Bonus * bonus, Block * block, Score * score);
+    /*!With bonus block collision handling*/
     void checkBonusCollision(Bonus * bonus, Block * block);
+    /*!Wall collision handling*/
     void checkWallCollision(int winH);
+    /*!Check is rhe ball fail?*/
     bool checkFail(int winW);
+    /*!Paddle collision handling*/
     bool checkPadleCollision(Object & paddle);
-
-    void ballBonusManager(Bonus & bonus);
-
+    /*!Ыtops performing the bonus if its time is up*/
+    void stopBallBonus(Bonus & bonus);
+    /*Sstops performing the bonus if its time is up*/
     void setRandDisplacement();
 
     void loadSprites() override;    
